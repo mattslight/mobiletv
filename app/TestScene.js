@@ -16,7 +16,7 @@ export default class TestScene extends Component {
 
     render() {
         return (
-            <Swiper horizontal={false} showsPagination={false} index={1}>
+            <Swiper horizontal={false} showsPagination={false} index={1} loop={false}>
                 <View style={this.viewStyle()}>
                     <TitleText label="Start Broadcast" />
                 </View>

@@ -1,4 +1,4 @@
 import React, { AppRegistry } from 'react-native';
-import mobiletv from './app';
+import MobileTVApp from './app/MobileTVApp';
 
-AppRegistry.registerComponent('mobiletv', () => mobiletv);
+AppRegistry.registerComponent('MobileTVApp', () => MobileTVApp);

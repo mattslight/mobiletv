@@ -8,7 +8,7 @@ import { AppRegistry, Navigator } from 'react-native';
 
 import TestScene from './TestScene';
 
-export default class mobiletv extends Component {
+export default class MobileTVApp extends Component {
     render() {
         return (
             <Navigator
@@ -21,4 +21,4 @@ export default class mobiletv extends Component {
     }
 }
 
-AppRegistry.registerComponent('mobiletv', () => mobiletv);
+AppRegistry.registerComponent('mobiletv', () => MobileTVApp);
