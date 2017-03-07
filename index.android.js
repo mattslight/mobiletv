@@ -4,7 +4,7 @@ import Swiper from 'react-native-swiper'
 import randomcolor from 'randomcolor'
 
 
-export default class MobileTVApp extends Component {
+export default class mobiletv extends Component {
 
     viewStyle() {
         return {
@@ -43,4 +43,4 @@ class TitleText extends React.Component {
     }
 }
 
-AppRegistry.registerComponent('MobileTVApp', () => MobileTVApp);
+AppRegistry.registerComponent('mobiletv', () => mobiletv);
