@@ -20,7 +20,7 @@ export default class TestScene extends Component {
                 <View style={this.viewStyle()}>
                     <TitleText label="Start Broadcast" />
                 </View>
-                <Swiper loop={true} showsPagination={false}>
+                <Swiper horizontal={true} loop={true} showsPagination={false}>
                     <View style={this.viewStyle()}>
                         <TitleText label="Channel 1" />
                     </View>
