@@ -18,7 +18,7 @@ export default class TestScene extends Component {
         return (
             <Swiper horizontal={false} showsPagination={false} index={1}>
                 <View style={this.viewStyle()}>
-                    <TitleText label="Up" />
+                    <TitleText label="Start Broadcast" />
                 </View>
                 <Swiper loop={true} showsPagination={false}>
                     <View style={this.viewStyle()}>
@@ -35,7 +35,7 @@ export default class TestScene extends Component {
                     </View>
                 </Swiper>
                 <View style={this.viewStyle()}>
-                    <TitleText label="Down" />
+                    <TitleText label="EPG / Info" />
                 </View>
             </Swiper>
 
