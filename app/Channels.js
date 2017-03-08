@@ -5,39 +5,48 @@ import { AppRegistry, Text, Image, View } from 'react-native';
 var MOCK_CATEGORY_DATA = [
     {
         "categoryId": 1,
-        "categoryName": "One Live"
+        "categoryName": "One Live",
+        "url": "http://dummy1/"
     },
     {
         "categoryId": 2,
-        "categoryName": "Sport"
+        "categoryName": "Sport",
+        "url": "http://dummy2/"
     },
     {
         "categoryId": 3,
-        "categoryName": "Dance"
+        "categoryName": "Dance",
+        "url": "http://dummy3/"
     },
     {
         "categoryId": 4,
-        "categoryName": "Nature"
+        "categoryName": "Nature",
+        "url": "http://dummy4/"
     },
     {
         "categoryId": 5,
-        "categoryName": "Music"
+        "categoryName": "Music",
+        "url": "http://dummy5/"
     },
     {
         "categoryId": 6,
-        "categoryName": "Edu"
+        "categoryName": "Edu",
+        "url": "http://dummy6/"
     },
     {
         "categoryId": 7,
-        "categoryName": "Talk"
+        "categoryName": "Talk",
+        "url": "http://dummy7/"
     },
     {
         "categoryId": 8,
-        "categoryName": "Random"
+        "categoryName": "Random",
+        "url": "http://dummy8/"
     },
     {
         "categoryId": 9,
-        "categoryName": "Live Cam"
+        "categoryName": "Live Cam",
+        "url": "http://dummy9/"
     }
 ]
 
@@ -48,18 +57,19 @@ export default class Channels extends Component {
 
         return (
             <View>
-                <TitleText label={channel.categoryName} />
+                <ChannelTitle label={channel.categoryName} url={channel.url}/>
             </View>
         );
     }
 }
 
-class TitleText extends React.Component {
+class ChannelTitle extends Component {
     render() {
         return (
-            <Text style={{ fontSize: 48, color: 'white' }}>
+            <Text style={{ fontSize: 48, color: 'white' }} data-url={this.props.url}>
                 {this.props.label}
             </Text>
+
         )
     }
 }
