@@ -4,6 +4,7 @@ import { AppRegistry, View, Text, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper'
 import randomcolor from 'randomcolor'
 import Channels from './app/Channels'
+import EpgDetails from './app/EpgDetails'
 
 export default class MobileTVApp extends Component {
 
@@ -21,7 +22,7 @@ export default class MobileTVApp extends Component {
             <Swiper horizontal={false} showsPagination={false} loop={false} index={1}>
                 <View style={this.viewStyle()}>
                     <TitleText label="Start Broadcast" />
-                    <Text>
+                    <Text style={{ color: 'white'}}>
                         Please log in to start a broadcast.
                     </Text>
                 </View>
@@ -52,7 +53,7 @@ export default class MobileTVApp extends Component {
                     </View>
                 </Swiper>
                 <View style={this.viewStyle()}>
-                    <TitleText label="EPG / Info" />
+                    <EpgDetails catid={0} />
                 </View>
             </Swiper>
 
