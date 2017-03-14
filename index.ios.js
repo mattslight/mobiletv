@@ -5,21 +5,11 @@ import Swiper from 'react-native-swiper'
 import randomcolor from 'randomcolor'
 import Channels from './app/Channels'
 import EpgDetails from './app/EpgDetails'
-import SimpleNav from './app/SimpleNav'
-import MyScene from './app/MyScene'
+import SwipeNumber from './app/SwipeNumber'
 
 let pageId = 0;
 
 export default class MobileTVApp extends Component {
-
-    nextScene() {
-        pageId++;
-    }
-
-
-    backScene() {
-        pageId--;
-    }
 
     viewStyle() {
         return {
@@ -39,9 +29,7 @@ export default class MobileTVApp extends Component {
                         Please log in to start a broadcast.
                     </Text>
                 </View>
-                <View style={this.viewStyle()}>
-                    <MyScene title={pageId} onForward={this.nextScene()} onBack={this.backScene()} />
-                </View>
+                <SwipeNumber />
                 <View style={this.viewStyle()}>
                     <EpgDetails catid={pageId} />
                 </View>
