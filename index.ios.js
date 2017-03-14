@@ -5,8 +5,21 @@ import Swiper from 'react-native-swiper'
 import randomcolor from 'randomcolor'
 import Channels from './app/Channels'
 import EpgDetails from './app/EpgDetails'
+import SimpleNav from './app/SimpleNav'
+import MyScene from './app/MyScene'
+
+let pageId = 0;
 
 export default class MobileTVApp extends Component {
+
+    nextScene() {
+        pageId++;
+    }
+
+
+    backScene() {
+        pageId--;
+    }
 
     viewStyle() {
         return {
@@ -26,34 +39,11 @@ export default class MobileTVApp extends Component {
                         Please log in to start a broadcast.
                     </Text>
                 </View>
-                <Swiper horizontal={true} loop={true} showsPagination={false}>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={0} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={1} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={3} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={4} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={5} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={6} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={7} />
-                    </View>
-                    <View style={this.viewStyle()}>
-                        <Channels catid={8} />
-                    </View>
-                </Swiper>
                 <View style={this.viewStyle()}>
-                    <EpgDetails catid={0} />
+                    <MyScene title={pageId} onForward={this.nextScene()} onBack={this.backScene()} />
+                </View>
+                <View style={this.viewStyle()}>
+                    <EpgDetails catid={pageId} />
                 </View>
             </Swiper>
 
@@ -70,7 +60,6 @@ class TitleText extends React.Component {
         )
     }
 }
-
 
 AppRegistry.registerComponent('mobiletv', () => MobileTVApp);
 

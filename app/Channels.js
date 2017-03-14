@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { AppRegistry, Text, Image, View } from 'react-native';
 
 
-var MOCK_CATEGORY_DATA = [
+let MOCK_CATEGORY_DATA = [
     {
         "categoryId": 1,
         "categoryName": "One Live",
