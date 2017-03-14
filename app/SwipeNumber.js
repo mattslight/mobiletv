@@ -7,7 +7,8 @@ import {
     AppRegistry
 } from 'react-native'
 import Swiper from 'react-native-swiper'
-const { width } = Dimensions.get('window')
+import ViewLoop from './ViewLoop'
+const { width } = Dimensions.get('window');
 
 const styles = {
     wrapper: {
@@ -29,7 +30,7 @@ const styles = {
         width,
         flex: 1
     }
-}
+};
 
 const renderPagination = (index, total, context) => {
     return (
@@ -46,29 +47,18 @@ const renderPagination = (index, total, context) => {
             </Text>
         </View>
     )
-}
+};
 
 export default class SwipeNumber extends Component {
     render () {
         return (
             <View>
-                <Swiper style={styles.wrapper} height={240}
+                <Swiper height={340}
                         renderPagination={renderPagination}
                         paginationStyle={{
             bottom: -23, left: null, right: 10
-          }} loop={false}>
-                    <View style={styles.slide} title={<Text numberOfLines={1}>Aussie tourist dies at Bali hotel</Text>}>
-                        <Image style={styles.image} source={require('../img/1.jpg')} />
-                    </View>
-                    <View style={styles.slide} title={<Text numberOfLines={1}>Big lie behind Nine’s new show</Text>}>
-                        <Image style={styles.image} source={require('../img/2.jpg')} />
-                    </View>
-                    <View style={styles.slide} title={<Text numberOfLines={1}>Why Stone split from Garfield</Text>}>
-                        <Image style={styles.image} source={require('../img/3.jpg')} />
-                    </View>
-                    <View style={styles.slide} title={<Text numberOfLines={1}>Learn from Kim K to land that job</Text>}>
-                        <Image style={styles.image} source={require('../img/4.jpg')} />
-                    </View>
+          }} loop={true}>
+                    <ViewLoop />
                 </Swiper>
             </View>
         )
